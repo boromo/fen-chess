@@ -1,0 +1,53 @@
+body {
+  font-size: 16px;
+}
+
+body .Grid {
+  display: grid;
+  grid-template-columns: repeat( 8, 1fr );
+  grid-template-rows: auto;
+
+  max-width: 570px;
+  margin: 30px auto;
+  box-sizing: border-box;
+  border: 10px solid #5a5a5a;
+}
+.Grid__item::before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+}
+
+.Grid .Grid__item {
+  background-color: white;
+  position: relative;
+}
+
+.Grid .Grid__item span {
+  font-size: 2rem;
+  position: absolute;
+  content: '';
+  display: flex;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.Grid .Grid__item span:hover {
+  border: solid 1px red;
+}
+
+.Grid__item:nth-of-type(-2n+8), 
+.Grid__item:nth-of-type(8) ~ *:nth-of-type(-2n+15), 
+.Grid__item:nth-of-type(16) ~ *:nth-of-type(-2n+24), 
+.Grid__item:nth-of-type(24) ~ *:nth-of-type(-2n+31), 
+.Grid__item:nth-of-type(32) ~ *:nth-of-type(-2n+40), 
+.Grid__item:nth-of-type(40) ~ *:nth-of-type(-2n+47), 
+.Grid__item:nth-of-type(48) ~ *:nth-of-type(-2n+56), 
+.Grid__item:nth-of-type(56) ~ *:nth-of-type(-2n+63) {
+    background-color: #d3d3d3;
+};
